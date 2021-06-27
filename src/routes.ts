@@ -25,4 +25,5 @@ router.post("/compliments", ensureAuthenticated, createComplimentsController.han
 router.get("/users/compliments/send", ensureAuthenticated, listUserSendComplimentsController.handle);
 router.get("/users/compliments/receive", ensureAuthenticated, listUserReceiveComplimentsController.handle);
 router.get("/tags", ensureAuthenticated, listTagController.handle);
+
 export { router };
