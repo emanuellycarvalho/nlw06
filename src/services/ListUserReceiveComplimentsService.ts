@@ -1,6 +1,5 @@
 import { getCustomRepository } from "typeorm"
 import { ComlimentsRepositories } from "../repositories/ComplimentsRepositories";
-import { UserRepositories } from "../repositories/UserRepositories"
 
 
 
@@ -11,7 +10,8 @@ class ListUserReceiveCompliments{
         const compliments = await complimetsRepository.find({
             where: {
                 user_receiver: user_id
-            }
+            },
+            relations: ["userSender", "userReceiver", "tag"]
         });
 
         return compliments;
